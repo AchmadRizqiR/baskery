@@ -53,35 +53,38 @@
     <div class="flex mt-[76px] h-28 justify-center items-center bg-[#FFF5EB]">
         <h2 class="text-center text-2xl font-extrabold">HALO WAHAI MAKHLUK SI</h2>
     </div>
-    <div class="min-h-min">
+    <div class="min-h-max">
         <!-- Best -->
-        <div class="flex flex-col min-h-96 max-h-max rouded-lg justify-center items-center bg-[#D0C2B0]">
-            <h2 class="text-4xl font-semibold" style="font-family: 'Fredoka', sans-serif;">Best Seller</h2>
+        <div class="flex flex-col min-h-96 max-h-max rouded-lg justify-center items-center bg-[#D0C2B0] pb-10">
+            <h2 class="text-xl mt-6 md:text-4xl font-semibold" style="font-family: 'Fredoka', sans-serif;">Best Seller</h2>
             <!-- Logic looping untuk menampilkan produk -->
             <!-- Card -->
-            <div class="flex w-full justify-evenly mt-16">
-                <div class="bg-white h-52 w-40 rounded-xl">
+            <div class="flex flex-wrap w-full justify-evenly mt-8 md:mt-12">
+                @foreach ($products as $product)
+                    <div class="bg-white w-36 mb-5 md:w-64 rounded-3xl shadow-md flex flex-col overflow-hidden">
+                        <img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}"
+                            class="w-full min-h-min md:h-56 object-cover rounded-3xl" />
 
-                </div>
-                <div class="bg-white h-52 w-40 rounded-xl">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-lg text-center font-bold">{{ $product->name }}</h3>
+                            <p class="text-xs md:mb-4 text-gray-500">{{ $product->description }}</p>
 
-                </div>
-                <div class="bg-white h-52 w-40 rounded-xl">
-
-                </div>
-                <div class="bg-white h-52 w-40 rounded-xl">
-
-                </div>
-                <div class="bg-white h-52 w-40 rounded-xl">
-
-                </div>
-                <div class="bg-white h-52 w-40 rounded-xl">
-
-                </div>
+                            <div class="flex justify-between items-center mt-5">
+                                <p class="text-sm text-red-500">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                                <a href="#">
+                                    <div class="bg-gray-200 rounded-full p-2">
+                                        <img src="/icon/keranjang.svg" alt="keranjang" class="h-5 w-5" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            
         </div>
+
         <!-- Semua Menu -->
+         
     </div>
     
 </body>
