@@ -1,17 +1,88 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#FFF5EB]">
+    <nav class="bg-white shadow-lg w-full px-6 py-5 fixed top-0 left-0 z-50 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="/images/logo.png" alt="Logo" class="h-10">
+            <span class="font-bold text-2xl">BasKery</span>
+        </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-8 font-semibold">
+            <a href="#" class="hover:text-orange-500 text-xl">Home</a>
+            <a href="#" class="hover:text-orange-500 text-xl">About Us</a>
+            <a href="#" class="hover:text-orange-500 text-xl">Blog</a>
+            <a href="#" class="hover:text-orange-500 text-xl">Contact</a>
+        </div>
+
+        <!-- Cart & Menu Icon -->
+        <div class="flex items-center space-x-4">
+            <!-- Cart Icon with Badge -->
+            <div class="relative">
+                <a href="#">
+                    <img src="/icon/keranjang.svg" alt="keranjang">
+                </a>
+            </div>
+
+            <!-- Hamburger Menu (mobile) -->
+            <button class="md:hidden focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            </button>
+        </div>
+    </nav>
+    <div class="flex relative top-20 md:relative md:top-[76px] bg-no-repeat bg-center bg-cover aspect-[5760/2764] w-full justify-center items-center" style="background-image: url('{{ asset('images/bg-dashboard.png') }}');">
+        <h2 class="text-center text-xl md:absolute md:text-left font-bold md:text-7xl md:top-[35%] md:left-[15%] text-white" style="font-family: 'Fredoka', sans-serif;">
+            404: Hunger Not Found <br> setelah makan roti ini
+        </h2>
+    </div>
+    <!-- Search -->
+    <div class="flex mt-[76px] h-28 justify-center items-center bg-[#FFF5EB]">
+        <h2 class="text-center text-2xl font-extrabold">HALO WAHAI MAKHLUK SI</h2>
+    </div>
+    <div class="min-h-min">
+        <!-- Best -->
+        <div class="flex flex-col min-h-96 max-h-max rouded-lg justify-center items-center bg-[#D0C2B0]">
+            <h2 class="text-4xl font-semibold" style="font-family: 'Fredoka', sans-serif;">Best Seller</h2>
+            <!-- Logic looping untuk menampilkan produk -->
+            <!-- Card -->
+            <div class="flex w-full justify-evenly mt-16">
+                <div class="bg-white h-52 w-40 rounded-xl">
+
+                </div>
+                <div class="bg-white h-52 w-40 rounded-xl">
+
+                </div>
+                <div class="bg-white h-52 w-40 rounded-xl">
+
+                </div>
+                <div class="bg-white h-52 w-40 rounded-xl">
+
+                </div>
+                <div class="bg-white h-52 w-40 rounded-xl">
+
+                </div>
+                <div class="bg-white h-52 w-40 rounded-xl">
+
                 </div>
             </div>
+            
         </div>
+        <!-- Semua Menu -->
     </div>
-</x-app-layout>
+    
+</body>
+</html>
