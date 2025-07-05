@@ -50,13 +50,13 @@
         </h2>
     </div>
     <!-- Search -->
-    <div class="flex mt-[76px] h-28 justify-center items-center bg-[#FFF5EB]">
+    <div class="flex mt-[76px] h-28 justify-center items-center">
         <h2 class="text-center text-2xl font-extrabold">SEARCH DI SINI NANTINYA</h2>
     </div>
     <div class="min-h-max">
         <!-- Best -->
         <div class="flex flex-col min-h-96 max-h-max rounded-b-3xl justify-center items-center bg-[#D0C2B0] pb-10">
-            <h2 class="text-xl mt-6 md:text-4xl font-semibold" style="font-family: 'Fredoka', sans-serif;">Best Seller</h2>
+            <h2 class="text-xl mt-6 md:text-4xl font-medium" style="font-family: 'Fredoka', sans-serif;">Best Seller</h2>
             <!-- Logic looping untuk menampilkan produk -->
             <!-- Card -->
             <div class="flex flex-wrap w-full justify-evenly mt-8 md:mt-12">
@@ -98,9 +98,10 @@
         </div>
 
         <!-- Semua Menu -->
-        <div class="flex flex-wrap w-full justify-evenly mt-8 md:mt-12">
+        <h2 class="text-xl mt-6 md:text-4xl font-medium text-center" style="font-family: 'Fredoka', sans-serif;">Semua Menu</h2>
+        <div class="flex flex-wrap min-h-min w-full justify-evenly mt-8 md:mt-12">
             @foreach ($allProducts as $product)
-                <div class="bg-white w-36 mb-5 md:w-64 rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+                <div class="bg-white w-36 mb-10 md:w-64 rounded-3xl shadow-2xl flex flex-col overflow-hidden">
                     <img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}"
                         class="w-full min-h-min md:h-56 object-cover rounded-3xl mb-2" />
                         <div class="flex items-center justify-start pl-4">
