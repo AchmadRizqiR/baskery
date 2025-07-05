@@ -49,14 +49,14 @@
         </div>
 
         <!-- Dropdown Menu Mobile -->
-        <div id="mobile-menu" class="md:hidden hidden flex flex-col bg-white shadow-lg px-6 py-4 space-y-4 absolute top-[70px] left-0 w-full z-40">
-            <a href="#" class="text-xl font-semibold hover:text-orange-500">Home</a>
-            <a href="#" class="text-xl font-semibold hover:text-orange-500">About Us</a>
-            <a href="#" class="text-xl font-semibold hover:text-orange-500">Blog</a>
-            <a href="#" class="text-xl font-semibold hover:text-orange-500">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden flex-col bg-white shadow-lg px-6 py-4 space-y-4 absolute top-[70px] left-0 w-full z-40">
+            <a href="#" class="text-sm md:text-xl font-semibold hover:text-orange-500">Home</a>
+            <a href="#" class="text-sm md:text-xl font-semibold hover:text-orange-500">About Us</a>
+            <a href="#" class="text-sm md:text-xl font-semibold hover:text-orange-500">Blog</a>
+            <a href="#" class="text-sm md:text-xl font-semibold hover:text-orange-500">Contact</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="text-xl font-semibold hover:text-orange-500">Logout</button>
+                <button type="submit" class="text-sm md:text-xl font-semibold hover:text-orange-500">Logout</button>
             </form>
         </div>
     </nav>
@@ -156,6 +156,7 @@
     <script>
         function menu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('flex');
         }
     </script>
 </body>

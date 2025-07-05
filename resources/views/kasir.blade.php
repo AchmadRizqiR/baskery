@@ -17,8 +17,8 @@
 
         <!-- Sidebar (Kiri) -->
         <div id="sidebar" class="bg-[#D0C2B0] w-full font-medium text-black p-6 rounded-r-3xl shadow-2xl hidden md:flex md:w-1/4 flex-col justify-between h-screen">
-            <div class="mt-5">
-                <h1 class="text-2xl text-center">Abang Kasir</h1>
+            <div class="flex flex-row mt-5 gap-2 justi">
+                <img class="h-6" src="/icon/profile.png" alt="profile"><h1 class="text-2xl text-center">Abang {{$user->name}}</h1>
             </div>
             <div class="flex flex-col items-start justify-center flex-grow gap-4">
                 <a onclick="tab('dashboard')" class="flex items-center gap-2 py-10 px-4 rounded-l-full rounded-tr-full hover:bg-[#FFF5EB] w-full">

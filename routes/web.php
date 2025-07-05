@@ -3,14 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KasirController;
 
 Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::middleware(['auth', 'role:kasir'])->get('/kasir', function () {
-    return view('kasir');
-});
+Route::middleware(['auth', 'role:kasir'])->get('/kasir', [KasirController::class, 'index'])->name('kasir');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
