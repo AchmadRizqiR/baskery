@@ -26,24 +26,41 @@
         </div>
 
         <!-- Cart & Menu Icon -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3">
             <!-- Cart Icon with Badge -->
             <div class="relative">
                 <a href="#">
                     <img src="/icon/keranjang.svg" alt="keranjang">
                 </a>
             </div>
-
+            <form method="POST" action="{{route('logout')}}" class="hidden md:flex items-center justify-center">
+                @csrf
+                <button type="submit"><img src="/icon/logout.png" class="h-6 w-6" alt="logout"></button>
+            </form>
             <!-- Hamburger Menu (mobile) -->
-            <button class="md:hidden focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <button class="md:hidden focus:outline-none" onclick="menu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </button>
+            
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden hidden flex flex-col bg-white shadow-lg px-6 py-4 space-y-4 absolute top-[70px] left-0 w-full z-40">
+            <a href="#" class="text-xl font-semibold hover:text-orange-500">Home</a>
+            <a href="#" class="text-xl font-semibold hover:text-orange-500">About Us</a>
+            <a href="#" class="text-xl font-semibold hover:text-orange-500">Blog</a>
+            <a href="#" class="text-xl font-semibold hover:text-orange-500">Contact</a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="text-xl font-semibold hover:text-orange-500">Logout</button>
+            </form>
         </div>
     </nav>
+    
     <div class="flex relative top-20 md:relative md:top-[76px] bg-no-repeat bg-center bg-cover aspect-[5760/2764] w-full justify-center items-center" style="background-image: url('{{ asset('images/bg-dashboard.png') }}');">
         <h2 class="text-center text-xl md:absolute md:text-left font-bold md:text-7xl md:top-[40%] md:left-[15%] text-white" style="font-family: 'Fredoka', sans-serif;">
             404: Hunger Not Found <br> setelah makan roti ini
@@ -136,6 +153,10 @@
             @endforeach
         </div>
     </div>
-    
+    <script>
+        function menu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
